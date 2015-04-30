@@ -30,6 +30,9 @@ PDSFMonitorMain::PDSFMonitorMain(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    //
+    ui->fUpdateButten->setEnabled(false);
+    ui->fPDSFstatusButton->setEnabled(false);
     // Login label
     ui->fLoginLabel->setText("status: Not logged in");
     ui->fLoginLabel->setStyleSheet("QLabel {color: red}");
@@ -65,7 +68,7 @@ void PDSFMonitorMain::ReturnFromLogin(NERSCLoginDialog *dialog){
            logintextbuilder << "Welcome " << fLoginData->GetUserName();
            ui->fLoginLabel->setText(logintextbuilder.str().c_str());
            ui->fLoginLabel->setStyleSheet("QLabel {color:green}");
-
+           ui->fUpdateButten->setEnabled(true);
            // Fetch my jobs from nersc
             UpdateJobStatus();
        }
@@ -150,4 +153,10 @@ void PDSFMonitorMain::InitJobtable(QTableView *jobtable){
     jobtable->setColumnWidth(2, 90);
 }
 
+}
+
+void PDSFApplication::PDSFMonitorMain::on_fUpdateButten_clicked()
+{
+    if(fLoginData && fLoginData->IsLoggedIn())
+        UpdateJobStatus();
 }

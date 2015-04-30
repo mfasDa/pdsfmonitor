@@ -39,6 +39,8 @@ private slots:
 
     void on_fLoginButton_clicked();
 
+    void on_fUpdateButten_clicked();
+
 private:
     Ui::PDSFMonitorMain                 *ui;
     NEWT::NERSCLoginData                *fLoginData;

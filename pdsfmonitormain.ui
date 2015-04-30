@@ -105,7 +105,7 @@
      <string>Update</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="fPDSFstatusButton">
     <property name="geometry">
      <rect>
       <x>120</x>
