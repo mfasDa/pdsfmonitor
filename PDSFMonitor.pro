@@ -28,7 +28,8 @@ HEADERS  += pdsfmonitormain.h \
     pdsfjob.h
 
 FORMS    += pdsfmonitormain.ui \
-    nersclogindialog.ui
+    nersclogindialog.ui \
+    detailed.ui
 
 unix: CONFIG += link_pkgconfig
 

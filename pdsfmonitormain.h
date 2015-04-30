@@ -41,6 +41,8 @@ private slots:
 
     void on_fUpdateButten_clicked();
 
+    void on_fJobTable_clicked(const QModelIndex &index);
+
 private:
     Ui::PDSFMonitorMain                 *ui;
     NEWT::NERSCLoginData                *fLoginData;

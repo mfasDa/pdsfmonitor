@@ -160,3 +160,12 @@ void PDSFApplication::PDSFMonitorMain::on_fUpdateButten_clicked()
     if(fLoginData && fLoginData->IsLoggedIn())
         UpdateJobStatus();
 }
+
+void PDSFApplication::PDSFMonitorMain::on_fJobTable_clicked(const QModelIndex &index)
+{
+    QStandardItemModel *tablemodel = static_cast<QStandardItemModel *>(ui->fJobTable->model());
+    int jobid = tablemodel->data(tablemodel->index(index.row(), 0)).toInt();
+    std::stringstream requeststring;
+    requeststring << "https://newt.nersc.gov/newt/queue/pdsf/" << jobid;
+    NEWT::NEWTRequest request(requeststring.str(), "", NEWT::NEWTRequest::kGET, NEWT::NEWTRequest::kRead, fLoginData->GetCookie());
+}
