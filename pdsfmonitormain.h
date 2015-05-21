@@ -16,6 +16,7 @@ class NERSCJobData;
 
 namespace PDSFApplication{
 
+class AboutDIalog;
 class NERSCLoginDialog;
 
 class PDSFMonitorMain : public QMainWindow
@@ -27,6 +28,7 @@ public:
     ~PDSFMonitorMain();
 
     void ReturnFromLogin(NERSCLoginDialog *dialog);
+    void ReturnFromAbout(AboutDIalog *dialog);
 
 protected:
 
@@ -42,6 +44,8 @@ private slots:
     void on_fUpdateButten_clicked();
 
     void on_fJobTable_clicked(const QModelIndex &index);
+
+    void on_actionAbout_triggered();
 
 private:
     Ui::PDSFMonitorMain                 *ui;

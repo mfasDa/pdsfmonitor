@@ -18,18 +18,21 @@ SOURCES += main.cpp\
     nersclogindialog.cpp \
     newtrequest.cpp \
     nerscjobdata.cpp \
-    pdsfjob.cpp
+    pdsfjob.cpp \
+    aboutdialog.cpp
 
 HEADERS  += pdsfmonitormain.h \
     nersclogindata.h \
     nersclogindialog.h \
     newtrequest.h \
     nerscjobdata.h \
-    pdsfjob.h
+    pdsfjob.h \
+    aboutdialog.h
 
 FORMS    += pdsfmonitormain.ui \
     nersclogindialog.ui \
-    detailed.ui
+    detailed.ui \
+    aboutdialog.ui
 
 unix: CONFIG += link_pkgconfig
 

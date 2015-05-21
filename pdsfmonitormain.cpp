@@ -14,6 +14,7 @@
 #include "nerscjobdata.h"
 #include "newtrequest.h"
 #include "pdsfjob.h"
+#include "aboutdialog.h"
 
 #include <algorithm>
 #include <cstdio>
@@ -153,6 +154,15 @@ void PDSFMonitorMain::InitJobtable(QTableView *jobtable){
     jobtable->setColumnWidth(2, 90);
 }
 
+void PDSFMonitorMain::on_actionAbout_triggered(){
+    AboutDIalog *myAbout = new AboutDIalog(this);
+    myAbout->setVisible(true);
+}
+
+void PDSFMonitorMain::ReturnFromAbout(AboutDIalog *dialog){
+   dialog->setVisible(false);
+}
+
 }
 
 void PDSFApplication::PDSFMonitorMain::on_fUpdateButten_clicked()
@@ -169,3 +179,6 @@ void PDSFApplication::PDSFMonitorMain::on_fJobTable_clicked(const QModelIndex &i
     requeststring << "https://newt.nersc.gov/newt/queue/pdsf/" << jobid;
     NEWT::NEWTRequest request(requeststring.str(), "", NEWT::NEWTRequest::kGET, NEWT::NEWTRequest::kRead, fLoginData->GetCookie());
 }
+
+
+
