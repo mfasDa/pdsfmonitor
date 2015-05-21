@@ -38,3 +38,5 @@ unix: CONFIG += link_pkgconfig
 
 unix|win32: LIBS += -lcurl
 
+OTHER_FILES += \
+    gplv3.txt
