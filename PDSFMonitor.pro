@@ -35,10 +35,3 @@ unix: CONFIG += link_pkgconfig
 
 unix|win32: LIBS += -lcurl
 
-
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../opt/local/lib/release/ -ljsoncpp
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../opt/local/lib/debug/ -ljsoncpp
-else:unix: LIBS += -L/opt/local/lib/ -ljsoncpp
-
-INCLUDEPATH += /opt/local/include
-DEPENDPATH += /opt/local/include
